@@ -36,7 +36,7 @@ function Card({posts}){
               </div>
 
               <div className="action">
-                <Link to={`/posts/${post.id}`}>Dettaglio</Link>
+                <Link to={`/posts/${post.slug}`}>Dettaglio</Link>
               </div>
 
             </div>

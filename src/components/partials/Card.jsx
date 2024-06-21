@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Card({posts}){
   return(
     <div className="card-container">
@@ -19,7 +21,7 @@ function Card({posts}){
                 }
               </div>
 
-              <div className="content">
+              <div className="content margin">
                 <p>{post.content}</p>
               </div>
 
@@ -27,10 +29,14 @@ function Card({posts}){
                   <span>{post.category.name}</span>
               </div>
 
-              <div className="tags">
+              <div className="tags margin">
                 {
-                  post.tags.map(tag => <span key={`card_tag${tag.id}`}>{tag.name}</span>)
+                  post.tags.map(tag => <span key={`card_tag${tag.id}`}>#{tag.name}</span>)
                 }
+              </div>
+
+              <div className="action">
+                <Link to={`/posts/${post.id}`}>Dettaglio</Link>
               </div>
 
             </div>
